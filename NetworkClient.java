@@ -71,9 +71,10 @@ public class NetworkClient {
 
     public static boolean isServerAvailable() {
         try {
-            String response = sendRequest("GET", SERVER_URL.replaceAll("/api$", ""), "");
-            return response != null;
+            String response = sendRequest("GET", SERVER_URL + "/users/list", "");
+            return response != null && response.length() > 0;
         } catch(Exception e) {
+            System.out.println("[NetworkClient] Server unavailable: " + e.getMessage());
             return false;
         }
     }
