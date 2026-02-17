@@ -2,12 +2,12 @@ FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-# Copy all Java source files and dependencies
-COPY *.java ./
+# Copy only the main Java source files and dependencies
+COPY SocialApp.java SocialAppServer.java NetworkClient.java ./
 COPY lib/ ./lib/
 
-# Compile all Java files
-RUN javac -cp "lib/*" *.java
+# Compile only the main Java files
+RUN javac -cp "lib/*" SocialApp.java SocialAppServer.java NetworkClient.java
 
 # Expose port (Render will set PORT env variable)
 EXPOSE 8080

@@ -1,0 +1,35 @@
+# Build artifacts
+*.class
+*.jar
+!lib/
+!/lib/*.jar
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup files
+*Copy*
+*copy*
+*.bak
+*.tmp
+
+# Data files (local)
+posts.dat
+users.dat
+profiles.dat
+
+# Local development
+data/
+temp/
+temp_frames*/
+videos/
+media/
+
+# Project files to exclude
+*.zip
+test_server.py
