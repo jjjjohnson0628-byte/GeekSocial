@@ -2,7 +2,7 @@ FROM eclipse-temurin:17-jre
 
 WORKDIR /app
 
-# Copy all Java source files
+# Copy all Java source files and dependencies
 COPY *.java ./
 COPY lib/ ./lib/
 
