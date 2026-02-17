@@ -2,14 +2,14 @@ FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-# Copy only the main Java source files and dependencies
-COPY SocialApp.java SocialAppServer.java NetworkClient.java ./
+# Copy only the server files (no JavaFX dependency)
+COPY SocialAppServer.java NetworkClient.java ./
 COPY lib/ ./lib/
 
-# Compile only the main Java files
-RUN javac -cp "lib/*" SocialApp.java SocialAppServer.java NetworkClient.java
+# Compile only the server files (no JavaFX needed for server)
+RUN javac -cp "lib/*" NetworkClient.java SocialAppServer.java
 
-# Expose port (Render will set PORT env variable)
+# Expose port
 EXPOSE 8080
 
 # Run the server
