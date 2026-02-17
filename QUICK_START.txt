@@ -1,0 +1,171 @@
+# Quick Start Guide - SocialApp
+
+## 🌟 NEW USERS? START HERE!
+
+**👉 Read: START_HERE.txt** for the easiest setup
+
+OR continue below for traditional methods.
+
+---
+
+## ⚡ FASTEST WAY TO RUN
+
+### Windows Users - NEW EASY WAY:
+1. **Double-click: `Install.bat`** (one-time only)
+2. **Double-click: `QuickStart.bat`** (every time you use it)
+
+Both server and app start automatically!
+
+---
+
+### Windows Users - TRADITIONAL WAY:
+**Just double-click: `Launch.vbs`**
+
+That's it! The app will start.
+
+---
+
+## 🔧 SYSTEM SETUP (One-time only)
+
+### Prerequisites Check:
+Make sure you have Java installed.
+
+**Check if Java is installed:**
+
+Windows Command Prompt:
+```
+java -version
+```
+
+If you get an error, download Java:
+- https://www.oracle.com/java/technologies/downloads/
+- Install JDK 11 or higher
+
+---
+
+## 🚀 RUNNING THE APP
+
+### Option 1: Double-Click (EASIEST - Windows)
+1. Double-click `Launch.vbs`
+2. App opens automatically
+
+### Option 2: Command Line (Windows)
+1. Open Command Prompt in the SocialApp folder
+2. Type: `SocialApp.bat`
+3. Press Enter
+
+### Option 3: Command Line (macOS/Linux)
+1. Open Terminal in the SocialApp folder
+2. Type: `bash run.sh`
+3. Press Enter
+
+---
+
+## 👤 FIRST TIME SETUP
+
+1. **Sign Up**: Create a new account
+   - Enter username and password
+   - Click "Sign Up"
+
+2. **Login**: Enter your credentials
+   - Click "Login"
+
+3. **Explore**: You're in!
+   - View the Feed
+   - Create Posts
+   - Go Live with your webcam
+
+---
+
+## 📝 BASIC FEATURES
+
+### Posts
+- Write text in the text area
+- Click "📷 Take Photo" or "🎥 Record Video" to add media
+- Click "Post" to share
+
+### Likes & Comments
+- Click ❤ to like a post
+- Click 💬 to add a comment
+
+### Messaging
+- Click "💬 Messages" button
+- Select a user and send a message
+
+### Go Live
+- Click "Go Live" to start streaming
+- Others see you in the "Live Users" list
+- Click their name to watch them
+- Click "Stop Live" to end (saves as a post)
+
+---
+
+## 🐛 TROUBLESHOOTING
+
+### App won't start
+1. Check Java is installed: `java -version`
+2. If not, download and install Java
+3. Make sure GeekSocial.jar exists
+4. If missing, run `Build.bat`
+
+### Webcam not working
+- Check other apps aren't using it
+- Try restarting
+- Grant permissions if prompted
+
+### Can't find files
+- Stay in the SocialApp folder
+- Don't move files individually
+
+---
+
+## 📦 SHARING THE APP
+
+### Package it for others:
+
+**Windows:**
+1. Double-click `Package.bat`
+2. Creates a ZIP file named `SocialApp_[timestamp].zip`
+3. Send this ZIP file
+4. Recipient extracts and runs `Launch.vbs`
+
+**No server needed!** Just ensure Java is installed on their computer.
+
+---
+
+## 📂 WHAT GETS SAVED
+
+Your data is stored locally:
+- **Users**: `data/users.json`
+- **Posts**: `data/posts.json`
+- **Messages**: `data/messages.json`
+- **Media**: `media/photos/` and `media/videos/`
+
+---
+
+## ❓ QUICK TIPS
+
+- **Multiple Users**: Each person needs their own account
+- **On Same Computer**: Different accounts = different logins
+- **On Different Computers**: Just extract and run on each
+- **No Internet Needed**: Works completely offline
+- **Data is Local**: Each computer keeps its own copy
+
+---
+
+## 🎯 KEYBOARD SHORTCUTS
+
+None - everything is mouse/button based!
+
+---
+
+## 📞 NEED HELP?
+
+1. Read README.md for full documentation
+2. Check the Troubleshooting section above
+3. Ensure Java is properly installed
+4. Try restarting the app
+
+---
+
+**Enjoy your social media platform! 🎉**

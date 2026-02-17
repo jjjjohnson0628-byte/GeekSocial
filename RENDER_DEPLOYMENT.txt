@@ -1,0 +1,172 @@
+=====================================
+DEPLOYMENT GUIDE: RENDER.COM
+=====================================
+
+Render is the best free option for deploying your SocialAppServer!
+
+FEATURES:
+- Free tier: 750 hours/month (can run continuously or part-time)
+- Auto scaling
+- Free SSL/HTTPS
+- Easy deployment from GitHub
+
+PREREQUISITES:
+1. GitHub account (free)
+2. Render account (free at render.com)
+3. SocialAppServer code in a GitHub repository
+
+STEP 1: PREPARE YOUR REPO
+========================
+
+Your GitHub repo should have structure:
+```
+SocialApp/
+├── SocialAppServer.java
+├── NetworkClient.java
+├── Procfile              (created for you)
+├── Dockerfile            (created for you)
+├── lib/                  (all JAR dependencies)
+│   ├── gson-2.x.jar
+│   └── ... other JARs ...
+└── data/                 (will be created at runtime)
+```
+
+IMPORTANT: Make sure all JAR libraries are in the lib/ folder!
+
+
+STEP 2: CREATE GITHUB REPOSITORY
+================================
+
+1. Go to github.com and create a new public repo called "SocialApp"
+2. Clone it locally (or upload these files):
+   git clone https://github.com/YOUR_USERNAME/SocialApp.git
+   cd SocialApp
+   
+3. Copy all your files:
+   - SocialAppServer.java
+   - Procfile
+   - Dockerfile
+   - lib/ folder (with all JARs)
+   
+4. Push to GitHub:
+   git add .
+   git commit -m "Initial SocialApp server"
+   git push origin main
+
+
+STEP 3: DEPLOY ON RENDER
+=======================
+
+1. Go to render.com and sign up (free)
+
+2. Click "New +" → Select "Docker"
+
+3. Fill in deployment form:
+   Name:               socialapp-server
+   GitHub Repo:        https://github.com/YOUR_USERNAME/SocialApp
+   Root Directory:     .
+   Build Command:      (leave empty - Dockerfile handles it)
+   Start Command:      (leave empty - Dockerfile handles it)
+   
+4. Environment Variables (Add these):
+   PORT               8080 (Render sets this automatically)
+   HOST               0.0.0.0 (already set in code)
+
+5. Click "Deploy"
+
+6. Wait 3-5 minutes for deployment to complete
+
+
+STEP 4: UPDATE YOUR CLIENT
+==========================
+
+Once deployment succeeds, Render will give you a URL like:
+   https://socialapp-server-abc123.onrender.com
+
+In PowerShell, set the environment variable:
+   [Environment]::SetEnvironmentVariable("SOCIAL_APP_SERVER", "https://socialapp-server-abc123.onrender.com", "User")
+
+Then restart PowerShell and run:
+   java -cp . SocialApp
+
+
+TROUBLESHOOTING
+===============
+
+❌ "Build failed"
+→ Check that all JAR files are in lib/ folder
+→ Check Dockerfile and Procfile are in root directory
+
+❌ "Application failed to start"
+→ Check logs in Render dashboard
+→ Verify PORT environment variable is being read
+
+❌ "Connection refused from client"
+→ Make sure SOCIAL_APP_SERVER is set correctly
+→ Check HTTPS not HTTP (Render uses HTTPS only)
+
+✓ "Free tier hours running out?"
+→ Free tier = 750 hours/month = ~25 hours/day
+→ Or keep it running 24/7 × 31 days = uses all 744 hours
+→ Upgrade to paid if you need 100% uptime
+
+
+AUTO-REDEPLOYMENT
+=================
+
+After initial setup:
+- Every git push auto-redeploys
+- No manual steps needed!
+- Changes go live in 1-2 minutes
+
+To redeploy a new version:
+   git push origin main  (Render auto-deploys)
+
+
+MONITORING
+==========
+
+In Render Dashboard:
+- View logs in real-time
+- See deployment history
+- Monitor resource usage
+- Set up alerts
+
+
+UPGRADING FROM FREE
+===================
+
+When you outgrow free tier ($7/month):
+- Render Dashboard → Settings → Upgrade
+- Paid tier = 24/7 uptime guarantee
+- Better performance, more memory
+
+
+QUESTIONS?
+==========
+
+1. Is my data persistent?
+   → Data in /data folder is ephemeral (lost on redeploy)
+   → Solution: Use database (PostgreSQL add-on for $7/month)
+
+2. Can I scale?
+   → Yes! Render has built-in auto-scaling
+
+3. SSL/HTTPS?
+   → Free automatic SSL certificate included!
+
+4. Custom domain?
+   → Yes! Add custom domain in Render settings ($12/year)
+
+
+NEXT: Database Setup (Optional)
+================================
+
+To persist data across redeployments, add PostgreSQL:
+1. In Render Dashboard → Create PostgreSQL
+2. Update SocialAppServer to use JDBC
+3. Set DATABASE_URL environment variable
+
+(Can implement if needed - let me know!)
+
+=====================================

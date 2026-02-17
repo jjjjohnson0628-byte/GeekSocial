@@ -1,0 +1,25 @@
+{
+  "PimpKalone": {
+    "username": "PimpKalone",
+    "displayName": "PimpKalone",
+    "passwordHash": "10750038664be0222601101ab167057221df18d80c13f54a5d56ba2aa2b662df",
+    "profilePhoto": "C:\\Users\\Jjjjo\\OneDrive\\Pictures\\Samsung Gallery\\DCIM\\Camera\\20251017_191651.jpg"
+  },
+  "Rockstar1897": {
+    "username": "Rockstar1897",
+    "displayName": "Rock Starrr",
+    "passwordHash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+    "profilePhoto": "C:\\Users\\Jjjjo\\OneDrive\\Pictures\\Samsung Gallery\\DCIM\\Camera\\20250802_132834.jpg"
+  },
+  "User1": {
+    "username": "User1",
+    "displayName": "You Sir One",
+    "passwordHash": "20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a",
+    "profilePhoto": "C:\\Users\\Jjjjo\\OneDrive\\Pictures\\Samsung Gallery\\DCIM\\Camera\\20250808_105125.jpg"
+  },
+  "test": {
+    "username": "test",
+    "displayName": "test",
+    "passwordHash": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"
+  }
+}

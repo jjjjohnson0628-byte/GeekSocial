@@ -1,0 +1,74 @@
+=====================================
+CLOUD SERVER CONFIGURATION GUIDE
+=====================================
+
+The SocialApp now supports both LOCAL and CLOUD servers!
+
+METHOD 1: Environment Variable (RECOMMENDED)
+---------------------------------------------
+1. Set the SOCIAL_APP_SERVER environment variable to your cloud server URL:
+   
+   Windows PowerShell:
+   $Env:SOCIAL_APP_SERVER = "https://your-cloud-server.com"
+   java -cp . SocialApp
+   
+   Windows CMD:
+   set SOCIAL_APP_SERVER=https://your-cloud-server.com
+   java -cp . SocialApp
+   
+   Linux/Mac:
+   export SOCIAL_APP_SERVER=https://your-cloud-server.com
+   java -cp . SocialApp
+
+2. Then enable Online Mode in the SocialApp GUI → Mode → Enable Online Mode checkbox
+
+
+METHOD 2: Cloud Mode Flag
+-------------------------
+Set CLOUD_MODE=true to automatically use the default cloud server:
+
+   Windows:
+   set CLOUD_MODE=true
+   java -cp . SocialApp
+   
+   Linux/Mac:
+   export CLOUD_MODE=true
+   java -cp . SocialApp
+
+
+METHOD 3: Programmatic (In Code)
+---------------------------------
+Before starting the app, call:
+   NetworkClient.useCloudServer();  // Switch to cloud
+   NetworkClient.useLocalServer();  // Switch back to local
+   NetworkClient.setServerURL("https://your-server.com");  // Custom URL
+
+
+CLOUD SERVER EXAMPLES
+---------------------
+The default cloud server URL in the code is:
+   https://socialsapp-cloud.herokuapp.com/api
+
+To use your own cloud server, specify your URL (without /api suffix):
+   https://your-domain.com
+   https://socialsapp.example.com
+   https://render.com/your-app
+   https://railway.app/your-app
+
+
+SWITCHING SERVERS
+-----------------
+LOCAL (Default):
+   http://127.0.0.1:8080
+
+CLOUD (Environment Variable):
+   Set SOCIAL_APP_SERVER environment variable
+
+Quick Test:
+1. Start with CLOUD_MODE=true
+2. Enable "Online Mode" in GUI
+3. If connection fails, ensure your cloud server is running
+
+
+NOTE: The cloud server must have the same API endpoints as the local SocialAppServer!
+=====================================

@@ -1,0 +1,107 @@
+===============================================
+QUICK START: DEPLOY IN 5 MINUTES
+===============================================
+
+TLDR: Follow these 10 commands:
+
+1. CREATE GITHUB REPO
+   https://github.com/new
+   Name: SocialApp
+   Public or Private (both work)
+   Click "Create repository"
+
+2. CLONE REPO LOCALLY
+   git clone https://github.com/YOUR_USERNAME/SocialApp.git
+   cd SocialApp
+
+3. COPY YOUR FILES
+   Copy into SocialApp folder:
+   - SocialAppServer.java
+   - NetworkClient.java
+   - Procfile (already created)
+   - Dockerfile (already created)
+   - lib/ folder with all JAR files
+
+4. PUSH TO GITHUB
+   git add .
+   git commit -m "Initial commit: SocialApp server"
+   git push -u origin main
+
+5. DEPLOY ON RENDER
+   a) Go to https://render.com (sign up free)
+   b) Create account → Dashboard
+   c) Click "New +" → "Docker"
+   d) Paste GitHub repo URL:
+      https://github.com/YOUR_USERNAME/SocialApp
+   e) Click "Deploy"
+   f) Wait 3-5 minutes
+
+6. GET YOUR URL
+   Once deployed, Render shows:
+   https://socialapp-server-XXXXX.onrender.com
+   (Save this URL!)
+
+7. UPDATE WINDOWS ENVIRONMENT
+   PowerShell as Administrator:
+   [Environment]::SetEnvironmentVariable("SOCIAL_APP_SERVER", "https://socialapp-server-XXXXX.onrender.com", "User")
+
+8. RESTART POWERSHELL & TEST
+   Close all PowerShell windows
+   Open new PowerShell
+   Run: java -cp . SocialApp
+
+9. ENABLE ONLINE MODE
+   In app: Mode → Enable Online Mode checkbox
+
+10. DONE! 🎉
+    Your app now uses cloud server!
+
+
+TROUBLESHOOTING
+===============
+
+"git command not found"
+→ Install Git: https://git-scm.com/download/win
+
+"Build failed on Render"
+→ Make sure lib/ folder has ALL JAR files
+→ Check Procfile exists in root
+
+
+UPDATING SERVER CODE
+====================
+
+To update your server after deployment:
+
+1. Make changes to SocialAppServer.java
+2. Commit and push:
+   git add .
+   git commit -m "Fixed bug"
+   git push
+
+3. Render auto-deploys in 1-2 minutes!
+   (Check deployment logs in Render dashboard)
+
+
+COMMON JAR FILES NEEDED
+=======================
+
+Make sure your lib/ folder contains:
+- gson-2.x.jar (JSON)
+- webcam-capture-0.3.12.jar (camera)
+- Any other dependencies your project uses
+
+Find your dependencies in your build/lib or check your original compilation setup.
+
+
+NEED HELP?
+==========
+
+Check logs in Render:
+1. Dashboard → Select your app
+2. Logs tab shows real-time output
+3. Look for errors or missing JARs
+
+
+Let me know when you get to step: ________
+===============================================

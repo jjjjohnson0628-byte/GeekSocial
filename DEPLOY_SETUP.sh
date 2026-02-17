@@ -1,0 +1,60 @@
+#!/bin/bash
+# SocialApp Cloud Deployment Setup Script for Linux/Mac
+
+echo ""
+echo "========== SocialApp Deployment Setup =========="
+echo ""
+echo "Step 1: Install Git (if not already installed)"
+echo ""
+echo "   macOS:"
+echo "   brew install git"
+echo ""
+echo "   Ubuntu/Debian:"
+echo "   sudo apt-get install git"
+echo ""
+
+echo "Step 2: Configure Git"
+echo "   git config --global user.name \"Your Name\""
+echo "   git config --global user.email \"your.email@github.com\""
+echo ""
+
+echo "Step 3: Create GitHub repository"
+echo "   1. Go to https://github.com/new"
+echo "   2. Create a repository named 'SocialApp'"
+echo "   3. Click 'Create Repository'"
+echo ""
+
+echo "Step 4: Push code to GitHub"
+echo "   cd /path/to/SocialApp"
+echo "   git init"
+echo "   git add ."
+echo "   git commit -m \"Initial SocialApp server\""
+echo "   git remote add origin https://github.com/YOUR_USERNAME/SocialApp.git"
+echo "   git branch -M main"
+echo "   git push -u origin main"
+echo ""
+
+echo "Step 5: Deploy on Render"
+echo "   1. Go to https://render.com"
+echo "   2. Sign up (free account)"
+echo "   3. Click 'New +' then 'Docker'"
+echo "   4. Paste your GitHub repo URL"
+echo "   5. Click Deploy (wait 3-5 minutes)"
+echo ""
+
+echo "Step 6: Get your cloud server URL"
+echo "   Render will show: https://socialapp-server-XXXXX.onrender.com"
+echo ""
+
+echo "Step 7: Update client environment"
+echo "   export SOCIAL_APP_SERVER=https://your-render-url.onrender.com"
+echo ""
+
+echo "Step 8: Run the client"
+echo "   java -cp . SocialApp"
+echo ""
+
+echo "Then enable 'Online Mode' in the app GUI!"
+echo ""
+echo "=================================================="
+echo ""

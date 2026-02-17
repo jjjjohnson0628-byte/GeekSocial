@@ -1,0 +1,179 @@
+# SocialApp Online Mode Guide
+
+## Overview
+SocialApp now supports **online interaction** through a client-server architecture. This allows multiple instances of the application to communicate with each other in real-time.
+
+## What's New?
+- **Network Mode**: Connect to a central server to share posts, messages, and user data with other users
+- **Local Mode**: Traditional local storage mode with JSON files (default)
+- **Flexible**: Seamlessly switch between online and local modes without data loss
+- **Fallback**: Automatically falls back to local mode if server is unavailable
+
+## Getting Started
+
+### Step 1: Start the Server (Once)
+The server runs on your machine and coordinates all online interactions.
+
+#### Windows:
+```
+Double-click: StartServer.bat
+```
+Or open Command Prompt in the SocialApp folder and run:
+```
+StartServer.bat
+```
+
+#### macOS/Linux:
+Open Terminal in the SocialApp folder and run:
+```
+bash StartServer.sh
+```
+
+You should see:
+```
+✓ SocialApp Server started on http://127.0.0.1:8080
+Waiting for client connections...
+```
+
+**Keep this terminal window open!** The server must be running for online mode to work.
+
+### Step 2: Start the Client
+Now run the SocialApp as normal:
+
+#### Windows:
+```
+Double-click: Launch.vbs
+Or: SocialApp.bat
+```
+
+#### macOS/Linux:
+```
+bash run.sh
+```
+
+### Step 3: Enable Online Mode
+1. Once the app is running, look at the menu bar at the top
+2. Click **Mode** menu
+3. Check **Enable Online Mode**
+4. You'll see a notification at the top: "⚡ Online Mode (Server Connected)"
+
+That's it! You're now online.
+
+## How It Works
+
+### Local Mode (Default)
+- Data stored in `data/users.json` and `data/posts.json`
+- No network connectivity needed
+- Single instance operation
+
+### Online Mode
+- All data goes through the server at `http://127.0.0.1:8080`
+- Multiple instances can connect and share data
+- Real-time updates across all connected clients
+- Server maintains central database of users, posts, and messages
+
+## Multi-User Scenario
+
+To test with multiple users on the same computer:
+
+### Terminal 1: Start the Server
+```
+StartServer.bat (Windows)
+bash StartServer.sh (Linux/Mac)
+```
+
+### Terminal 2: Start Client 1
+```
+SocialApp.bat (Windows)
+bash run.sh (Linux/Mac)
+```
+- Login as: `user1` / `password1`
+- Enable Online Mode
+- Create some posts
+
+### Terminal 3: Start Client 2
+```
+SocialApp.bat (Windows)
+bash run.sh (Linux/Mac)
+```
+- Login as: `user2` / `password2`
+- Enable Online Mode
+- You'll see `user1`'s posts in your feed!
+
+### Terminal 4+: Add More Users
+Create as many instances as you want. They all share data through the central server.
+
+## API Endpoints
+
+The server exposes REST endpoints for:
+
+### Users
+- `POST /api/users/register` - Register new account
+- `POST /api/users/login` - Login
+- `GET /api/users/get?username=X` - Get user profile
+- `GET /api/users/list` - List all users
+- `POST /api/users/update` - Update profile
+- `POST /api/users/follow` - Follow user
+- `POST /api/users/unfollow` - Unfollow user
+
+### Posts
+- `POST /api/posts/create` - Create new post
+- `GET /api/posts/list` - List all posts
+- `POST /api/posts/like` - Like a post
+- `POST /api/posts/unlike` - Unlike a post
+- `POST /api/posts/comment` - Comment on post
+
+### Messages
+- `POST /api/messages/send` - Send direct message
+- `GET /api/messages/get?user1=X&user2=Y` - Get conversation
+- `GET /api/messages/contacts?username=X` - Get message contacts
+- `GET /api/messages/unread?username=X` - Get unread count
+
+## Troubleshooting
+
+### "Server not available" error
+- Make sure `StartServer.bat` or `StartServer.sh` is running
+- Check that nothing is blocking port 8080
+- Try restarting the server
+
+### Posts/Messages not syncing
+- Check if "⚡ Online Mode" is enabled in the menu bar
+- If not, click Mode > Enable Online Mode again
+- Verify server is still running
+
+### Server crashes
+- The server will automatically recover
+- Restart it by closing and re-running StartServer.bat/sh
+- All data is saved to JSON files
+
+### Performance issues
+- Server can handle multiple concurrent users
+- Check your internet connection if using remote server
+- Clear old posts/messages to reduce database size
+
+## Configuration
+
+### Changing Server Address
+To connect to a different server, edit the source code and change:
+```java
+NetworkClient.setServerURL("http://your-server-ip:8080");
+```
+
+### Remote Server
+To access from other computers, change the server binding in `SocialAppServer.java`:
+```java
+server = HttpServer.create(new InetSocketAddress("0.0.0.0", PORT), 0);
+```
+
+## Security Note
+This implementation is designed for local network testing. For production use, add:
+- SSL/TLS encryption
+- Authentication tokens
+- Input validation
+- Rate limiting
+- Database instead of JSON files
+
+## Switching Back to Local Mode
+Simply uncheck "Enable Online Mode" in the Mode menu. The app will use local JSON files.
+
+Enjoy your connected social network! 🎉

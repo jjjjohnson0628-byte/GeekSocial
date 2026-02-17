@@ -1,0 +1,10 @@
+@echo off
+javac ^
+ --module-path "%~dp0javafx-sdk-25.0.2\lib" ^
+ --add-modules javafx.controls,javafx.media,javafx.swing ^
+ -cp ".;gson-2.10.1.jar;webcam-capture-0.3.12.jar;jna-5.13.0.jar;bridj-0.7.0.jar;slf4j-api-2.0.5.jar;slf4j-nop-2.0.5.jar" ^
+ SocialApp.java
+
+jar cfm GeekSocial.jar manifest.txt *.class users.json posts.json
+echo Build complete!
+pause

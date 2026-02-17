@@ -1,0 +1,208 @@
+# SocialApp - Installation Guide
+
+## For First-Time Users
+
+This guide will help you set up SocialApp in 5 minutes.
+
+---
+
+## ⚡ EASIEST METHOD (1 Click)
+
+### Step 1: Run the Installer
+1. Double-click: **Install.bat**
+2. Follow the prompts
+3. Wait for "Installation complete!" message
+
+### Step 2: Launch the App
+1. Double-click: **QuickStart.bat**
+2. Server starts automatically in background
+3. App launches
+4. Done! You're ready to use it
+
+**That's it!** The QuickStart method handles everything:
+- ✓ Starts the server automatically
+- ✓ Launches the application
+- ✓ Keeps server running in background
+
+---
+
+## 🔧 MANUAL METHOD (More Control)
+
+If you prefer to manage server and app separately:
+
+### Step 1: Prepare the Environment
+1. Double-click: **Install.bat**
+2. Wait for installation to complete
+
+### Step 2: Start the Server
+1. Double-click: **StartServer.bat**
+2. Keep this window open
+3. You should see: "Server started on http://127.0.0.1:8080"
+
+### Step 3: Start the Application (in new window)
+1. Double-click: **Launch.vbs**
+   OR
+   Run: **SocialApp.bat**
+
+### Step 4: Enable Online Mode
+1. In the app, click menu: **Mode > Enable Online Mode**
+2. You should see "⚡ Online Mode (Server Connected)"
+
+---
+
+## 🎯 BEFORE YOU START
+
+### Requirements:
+- **Java 11 or newer** (free download from oracle.com)
+- **Windows 7+, macOS 10.12+, or Linux**
+- **Port 8080** available (usually is)
+- **Optional: Webcam** for video features
+
+### Check Java is Installed:
+Open Command Prompt and type:
+```
+java -version
+```
+
+If you see a version number, you're good! If not, install Java.
+
+---
+
+## 🚀 FIRST TIME SETUP
+
+### Create Your Account
+1. When app opens, click: **Sign Up**
+2. Choose a username (e.g., "john123")
+3. Choose a password (e.g., "MyPassword!")
+4. Confirm password
+5. Click OK
+
+### Login
+1. Enter your username
+2. Enter your password
+3. Click Login
+
+### Test It Out
+1. In the feed, type a message in the text box
+2. Click the **Share** button
+3. Your post appears at the top!
+
+---
+
+## 🌐 MULTI-USER (Playing with Friends)
+
+To use with multiple people on the same computer:
+
+### Person 1:
+1. Run **QuickStart.bat** → Creates server + app
+2. Login (you start the server)
+3. Enable Online Mode
+
+### Person 2 (different computer):
+1. Run **QuickStart.bat**
+2. Login with different username
+3. Enable Online Mode
+4. You'll see Person 1's posts!
+
+### Persons 3+:
+- Repeat the same process
+- All connected users see the same posts and messages in real-time
+
+---
+
+## ❓ TROUBLESHOOTING
+
+### "Java is not installed" error
+**Solution:** Download and install Java from oracle.com
+
+### "Port 8080 already in use" warning
+**Solution:** 
+- Another program is using port 8080
+- Close other applications or change the port in the code
+
+### "Server not available" message in app
+**Solution:**
+- Make sure StartServer.bat is still running
+- Restart the server by closing and re-running it
+
+### Online Mode won't enable
+**Solution:**
+- Check that Server window is open
+- Try: Menu > Mode > Enable Online Mode > Toggle ON
+
+### Posts not syncing between users
+**Solution:**
+- Restart both apps
+- Make sure both have Online Mode enabled
+- Check if server window shows any errors
+
+---
+
+## 📁 FOLDER STRUCTURE
+
+After installation, you'll have:
+
+```
+SocialApp/
+├── Install.bat              ← Run this FIRST
+├── QuickStart.bat           ← Run this to start (Easiest!)
+├── StartServer.bat          ← Optional: Start server only
+├── Launch.vbs               ← Optional: Start app only
+├── SocialApp.bat            ← Alternative app launcher
+│
+├── SocialApp.java           (Application code)
+├── SocialAppServer.java     (Server code)
+├── NetworkClient.java       (Network library)
+│
+├── data/                    (User data, posts, messages)
+│   ├── users.json
+│   ├── posts.json
+│   └── messages.json
+│
+├── media/                   (Photos & videos)
+│   ├── photos/
+│   └── videos/
+│
+└── Documentation/
+    ├── QUICK_START.txt
+    ├── ONLINE_MODE.txt
+    ├── INSTALLATION.txt     ← This file
+    └── README.md
+```
+
+---
+
+## 🔒 SECURITY NOTES
+
+Your data is stored locally:
+- Usernames and passwords in `data/users.json`
+- Posts and messages in `data/posts.json` and `data/messages.json`
+- Only people with access to your computer can access this data
+
+**For production use**, add:
+- HTTPS encryption
+- Better password hashing
+- User authentication tokens
+- Input validation
+
+---
+
+## 📞 NEED HELP?
+
+Check these files for detailed info:
+- **QUICK_START.txt** - Fast overview
+- **ONLINE_MODE.txt** - Detailed online features
+- **README.md** - Full feature list
+
+---
+
+## 🎉 ENJOY!
+
+Your SocialApp is now installed and ready to use!
+
+If you have questions:
+1. Read ONLINE_MODE.txt for detailed instructions
+2. Check QUICK_START.txt for quick answers
+3. Review README.md for features
+
+Happy social networking! 🚀
