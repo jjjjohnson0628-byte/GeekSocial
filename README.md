@@ -1,249 +1,249 @@
-# SocialApp - Social Media Platform
+# 🌟 GeekSocial - Cloud-Based Social Media Platform
 
-A cross-platform social media application built with Java Swing and JavaFX featuring live streaming, photo/video capture, messaging, and more.
+A modern, cloud-powered social networking application with posts, messaging, live streaming, and more!
 
-## Features
+**Status:** ✅ Fully Functional | 🌐 Cloud Deployed | 📦 Windows Installer Ready
 
-### Core Features
-- **User Authentication** - Secure login/signup with SHA256 password hashing
-- **Live Streaming** - Real-time webcam broadcasts to other users
-- **Photo & Video Capture** - Direct camera capture with instant save
-- **Social Feed** - Display posts with media (photos, videos)
+---
 
-### Social Interactions
-- **❤️ Likes** - Like/unlike posts with counters
-- **💬 Comments** - Add and view comments on any post
-- **💬 Direct Messaging** - Send private messages to other users
-- **👥 Followers System** - Follow/unfollow other users
+## 🚀 Quick Start (Choose Your Option)
 
-### User Management
-- **Profile Customization** - Set display name and profile photo
-- **User Directory** - View all users on the platform
+### 👨‍💻 For End Users - Windows Installer (Easiest!)
 
-## System Requirements
+1. Download the installer from [GitHub Releases](https://github.com/jjjjohnson0628-byte/GeekSocial/releases)
+2. Run `GeekSocial-1.0-installer.exe`
+3. Follow the wizard
+4. Launch from Start Menu or Desktop shortcut
 
-- **Java**: JDK 11 or higher (free download from oracle.com or adoptopenjdk.org)
-- **Operating System**: Windows 7+, macOS 10.12+, or Linux
-- **Webcam**: Optional (required for live streaming and camera capture)
-- **Disk Space**: 500 MB minimum
+**No Java installation needed!** Everything is included.
 
-## ⚡ Quick Start (Easiest!)
+---
 
-### Windows Users - 2 Simple Steps!
+### 👨‍💼 For Developers - Build from Source
 
-1. **Double-click**: `Install.bat`
-   - Checks Java, creates folders, compiles code
+```powershell
+# Clone the repository
+git clone https://github.com/jjjjohnson0628-byte/GeekSocial.git
+cd GeekSocial
+
+# Run the app (cloud mode)
+$env:SOCIAL_APP_SERVER = "https://geeksocial.onrender.com"
+java -cp ".;lib/*;javafx-sdk-25.0.2/lib/*" SocialApp
+
+# Or build the Windows installer yourself
+.\build-jar.bat
+.\build-installer.bat
+```
+
+---
+
+## ✨ Features
+
+### Social Features
+- **Posts** - Share text, photos, and videos
+- **Likes** - React to posts (❤️ counter)
+- **Comments** - Discuss on any post
+- **Messaging** - Direct messages between users
+- **Followers** - Build your network
+- **Profiles** - Customize your profile with display name and photo
+
+### Media & Streaming
+- **Live Streaming** - Go live with your webcam in real-time
+- **Photo Capture** - Take photos directly from your webcam
+- **Video Recording** - Record videos from your camera
+- **Media Upload** - Share images and videos in posts
+
+### Smart Features
+- **Cloud Sync** - All data synced across devices
+- **Multi-Device** - Login from multiple computers
+- **Online/Offline Mode** - Works both connected and local
+- **Auto-Cloud Connection** - Seamless cloud server linking
+
+---
+
+## 🎯 First Steps (New Users)
+
+1. **Create Account** - Click "Sign Up" on login screen
+   - Username & password (choose something memorable!)
    
-2. **Double-click**: `QuickStart.bat`
-   - Starts server + app automatically
-   - Everything works together!
+2. **Enable Cloud Mode** - Menu → Mode → "Enable Online Mode"
+   - Status will show: "⚡ Online Mode (Server Connected)"
+   
+3. **Create Your First Post**
+   - Type a message (optional: add photo/video)
+   - Click "Post"
+   
+4. **Connect with Others**
+   - Use "👥 Followers" to find and follow users
+   - Message friends with "💬 Messages"
+   - Go live with "Go Live" button
 
-👉 **That's it! See INSTALLATION.txt for more details**
+---
 
-### Alternative Options
+## 🌐 Cloud Architecture
 
-- **Option A**: Double-click `Launch.vbs` (app only, local mode)
-- **Option B**: Run `SocialApp.bat` (command line)
-- **Option C**: Manual server mode (advanced)
+### Server
+- **Cloud Server:** https://geeksocial.onrender.com
+- **Location:** Render.com (free tier)
+- **Auto-Deploy:** Updates push to cloud instantly
+- **Data:** Real-time sync across all clients
 
-### macOS/Linux Users
+### Client
+- **Desktop App:** Windows/Mac/Linux
+- **Local Storage:** Offline capability
+- **Smart Switching:** Auto-connect to cloud when available
 
-```bash
-bash run.sh
+---
+
+## 💻 System Requirements
+
+### Windows Installer
+- Windows 7 or later (Vista not supported)
+- 300 MB free disk space
+- Internet connection (optional for offline mode)
+- **Java**: Included in installer
+
+### From Source
+- Java 17+ (download: https://adoptopenjdk.net)
+- JavaFX SDK 25.0.2 (included in `javafx-sdk-25.0.2/` folder)
+- Windows/Mac/Linux OS
+- Git (for cloning repository)
+
+### Optional
+- Webcam (for live streaming, photo/video capture)
+- Microphone (for voice in live streams)
+
+---
+
+## 📖 Documentation
+
+| Document | Purpose |
+|----------|---------|
+| **[INSTALLER_BUILD_GUIDE.md](INSTALLER_BUILD_GUIDE.md)** | Build your own Windows installer |
+| **[QUICK_START.txt](QUICK_START.txt)** | Quick reference guide |
+| **[CLOUD_SERVER_CONFIG.txt](CLOUD_SERVER_CONFIG.txt)** | Configure cloud server connection |
+| **[RENDER_DEPLOYMENT.txt](RENDER_DEPLOYMENT.txt)** | Deploy your own server instance |
+
+---
+
+## 🔐 Security & Privacy
+
+- **Passwords:** Hashed with SHA-256 (never stored in plain text)
+- **Encryption:** All cloud communication uses HTTPS
+- **Open Source:** Full source code available on GitHub
+- **No Tracking:** Your data stays within the app and cloud
+- **Local Control:** Can run completely offline without cloud
+
+---
+
+## 🛠️ Troubleshooting
+
+### "Server not available"
+- ✅ Check internet connection
+- ✅ Verify cloud server is running: https://geeksocial.onrender.com
+- ✅ Cloud might be starting up (free tier = slow start)
+- ✅ Try disabling "Online Mode" for offline operation
+
+### App won't start
+- ✅ Verify Java 17+ is installed: `java -version`
+- ✅ Check that `lib/` folder exists with all JAR files
+- ✅ Windows installer includes Java automatically
+
+### Can't see friends' posts
+- ✅ Make sure "Online Mode" is enabled
+- ✅ Check both users are using same cloud server
+- ✅ Try restarting the app
+
+### Live streaming not working
+- ✅ Check webcam is connected and not in use
+- ✅ Grant camera permissions if prompted
+- ✅ Test camera with Windows Camera app first
+
+---
+
+## 📦 Building & Distribution
+
+### For Developers: Create Windows Installer
+
+```powershell
+# Step 1: Build the JAR
+.\build-jar.bat
+
+# Step 2: Create installer
+.\build-installer.bat
+
+# Step 3: Installer is ready in 'installer' folder
+.\installer\GeekSocial-1.0-installer.exe
 ```
 
-Or setup online mode (see ONLINE_MODE.txt):
-```bash
-bash StartServer.sh
-```
+See **[INSTALLER_BUILD_GUIDE.md](INSTALLER_BUILD_GUIDE.md)** for detailed instructions.
 
-### Need Help?
-📖 **Read**: INSTALLATION.txt (step-by-step guide for beginners)
+### Distribute via GitHub Releases
 
-## Building from Source
+1. Go to: https://github.com/jjjjohnson0628-byte/GeekSocial/releases
+2. Create release (tag: `v1.0`)
+3. Upload: `.exe` from installer folder
+4. Users download and run!
 
-### Windows
-```
-Build.bat
-```
+---
 
-### macOS/Linux
-```bash
-bash build.sh
-```
+## 🔗 Links
 
-## File Structure
+- **GitHub Repository:** https://github.com/jjjjohnson0628-byte/GeekSocial
+- **Cloud Server:** https://geeksocial.onrender.com
+- **Report Issues:** https://github.com/jjjjohnson0628-byte/GeekSocial/issues
+- **Releases:** https://github.com/jjjjohnson0628-byte/GeekSocial/releases
 
-```
-SocialApp/
-├── SocialApp.java              # Main source code (1700+ lines)
-├── SocialApp.bat               # Windows launcher script
-├── Launch.vbs                  # Double-click launcher (Windows)
-├── build.sh                    # Build script (macOS/Linux)
-├── run.sh                      # Run script (macOS/Linux)
-├── Build.bat                   # Build script (Windows)
-├── manifest.txt                # JAR manifest
-├── GeekSocial.jar             # Compiled application
-├── javafx-sdk-25.0.2/         # JavaFX library
-├── *.jar                       # Dependencies (GSON, Webcam, NIO, SLF4J)
-├── data/                       # User and post data storage
-│   ├── users.json
-│   ├── posts.json
-│   └── messages.json
-└── media/                      # User-generated content
-    ├── photos/
-    └── videos/
-```
+---
 
-## How to Use
+## 📈 Development
 
-### First Time Setup
-1. Launch the app (double-click Launch.vbs or run SocialApp.bat)
-2. Click "Sign Up" to create an account
-3. Log in with your new credentials
+The project uses:
+- **Java 17** - Core application
+- **Swing/JavaFX** - GUI
+- **Gson** - JSON serialization
+- **Render.com** - Cloud hosting
+- **Git** - Version control
 
-### Creating a Post
-1. Click on the feed
-2. Enter your post text in the text area
-3. Optionally click "Add Media", "📷 Take Photo", or "🎥 Record Video"
-4. Click "Post" to share
+### Tech Stack
+- Backend: Java HTTP Server (`com.sun.net.httpserver`)
+- Frontend: Java Swing/JavaFX
+- Data: JSON files (local) / Cloud API (remote)
+- Media: Webcam capture, image/video save
+- Communication: HTTPS REST API
 
-### Going Live
-1. Click "Go Live" button
-2. Your webcam stream will start broadcasting
-3. Other users can watch your stream by clicking your name in the live users list
-4. Click "Stop Live" to end the broadcast (video saves as a post)
+---
 
-### Interacting with Posts
-- **Like**: Click the ❤ button on any post
-- **Comment**: Click the 💬 button and add your comment
-- **Message**: Click "Messages" button in navigation to send direct messages
+## 🎓 Learning Resources
 
-### Managing Relationships
-- Click "👥 Followers" to see your followers and people you follow
-- Click on any user's posts to view their profile content
+This project demonstrates:
+- ✅ Client-server architecture
+- ✅ Cloud deployment and DevOps
+- ✅ REST API design
+- ✅ JavaFX GUI development
+- ✅ Real-time data synchronization
+- ✅ Windows installer creation
+- ✅ Multi-platform support
 
-## Sharing the App
+---
 
-### Package for Distribution
+## 📄 License
 
-To share this app with others:
+This project is open source and available under the MIT License.
 
-1. **Copy the entire folder** - All dependencies and data are included
-2. **No installation needed** - Just ensure Java is installed on recipient's computer
-3. **Share via:**
-   - USB flash drive
-   - Cloud storage (Google Drive, Dropbox, OneDrive)
-   - Email as zip (if < 25MB)
-   - Git repository
+---
 
-### Creating a Portable ZIP
+## 💬 Support
 
-Windows (Command Line):
-```bat
-tar -c -f SocialApp.zip SocialApp/
-```
+- **Questions?** Check the documentation folders
+- **Found a bug?** Open an issue on GitHub
+- **Feature request?** Create a discussion on GitHub
+- **Want to contribute?** Fork and submit a pull request!
 
-Or use 7-Zip/WinRAR to compress the folder
+---
 
-macOS/Linux:
-```bash
-zip -r SocialApp.zip SocialApp/
-```
+## 🎉 Have Fun!
 
-### System for Installation on Target Machine
+Start sharing, connecting, and enjoying GeekSocial!
 
-1. Extract the ZIP file
-2. Ensure Java is installed (check with: `java -version`)
-3. For Windows: Double-click **Launch.vbs**
-4. For macOS/Linux: Run `bash run.sh`
-
-## Keyboard Shortcuts
-
-- None configured (all interactions via mouse/buttons)
-
-## Data Storage
-
-- **User Data**: `data/users.json` - All user accounts and profiles
-- **Posts**: `data/posts.json` - All posts, likes, and comments
-- **Messages**: `data/messages.json` - Direct message history
-- **Media**: `media/photos/` and `media/videos/` - User uploads
-
-All data is stored locally on each machine (not synchronized across instances).
-
-## Troubleshooting
-
-### "Java is not installed"
-- Download Java: https://www.oracle.com/java/technologies/downloads/
-- Or use OpenJDK: https://adoptopenjdk.net/
-
-### "Webcam not working"
-- Check if another app is using the webcam
-- Grant permission if prompted by OS
-- Try rebooting the computer
-- Test with another app first (e.g., Zoom, Skype)
-
-### "JAR file not found"
-- Run `Build.bat` (Windows) or `bash build.sh` (macOS/Linux) first
-- This compiles the source code into GeekSocial.jar
-
-### App runs but looks strange
-- This is usually just theme loading - give it a moment
-- Try resizing the window
-
-### Data not saving
-- Check that `data/` folder exists (created automatically)
-- Ensure write permissions for the folder
-- Try running as Administrator
-
-## Dependencies
-
-**Included Locally:**
-- GSON 2.10.1 - JSON serialization
-- Webcam Capture 0.3.12 - Camera access
-- JNA 5.13.0 - Native API bindings
-- BridJ 0.7.0 - Native library wrapper
-- SLF4J 2.0.5 - Logging framework
-- JavaFX 25.0.2 - UI framework
-
-**System Requirements:**
-- Java 11+ (JDK or JRE)
-
-## Limitations
-
-- Single-machine instance (no actual server networking)
-- Live streams between multiple instances requires manual user coordination
-- All data stored locally (no cloud sync)
-- Webcam access requires local hardware
-
-## Future Enhancements
-
-- Multi-machine networking with WebSocket server
-- Cloud storage integration
-- Mobile app version
-- Enhanced encryption for messages
-- User search and discovery
-- Post hashtags and trending
-- User notifications system
-- Video encoding to multiple formats
-
-## License
-
-Free to use and modify for personal/educational projects.
-
-## Contact & Support
-
-For issues or questions:
-1. Check the Troubleshooting section above
-2. Ensure Java is properly installed
-3. Review the Build.bat or build.sh scripts for errors
-
-## About
-
-Built with passion using:
-- Java Swing (GUI)
-- JavaFX (Media playback)
-- Webcam Capture (Live streaming)
-- GSON (Data persistence)
-
-Enjoy your social media platform!
+**Remember:** Cloud sync means your data follows you everywhere. Sign up once, use on any device! 🌍📱💻
