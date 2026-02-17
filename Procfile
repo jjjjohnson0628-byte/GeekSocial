@@ -1,1 +1,1 @@
-web: java -cp ".:lib/*" SocialAppServer
+web: java -Xmx512m -cp ".:lib/*" SocialAppServer
