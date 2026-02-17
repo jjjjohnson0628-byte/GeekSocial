@@ -1,0 +1,75 @@
+=====================================
+  GeekSocial - Quick Install Guide
+=====================================
+
+SYSTEM REQUIREMENTS:
+- Windows 7 or later
+- Java 11 or higher installed
+- 100 MB disk space
+
+INSTALLATION STEPS:
+
+1. PREPARE JAVA
+   If you don't have Java installed:
+   - Go to: https://www.oracle.com/java/technologies/downloads/
+   - Download Java 21 LTS
+   - Run the installer (next, next, finish)
+   - Verify: Open Command Prompt and type: java -version
+
+2. EXTRACT THE PACKAGE
+   - Right-click GeekSocial-portable.zip
+   - Select "Extract All..."
+   - Choose any folder (Desktop is fine)
+   - You'll see a "release" folder
+
+3. LAUNCH THE APPLICATION
+   - Open the "release" folder
+   - Double-click "GeekSocial.bat"
+   - The app will launch!
+
+FIRST TIME USE:
+
+- Click "Online Mode" to connect to the cloud server
+- Create an account with your username
+- Start posting and connecting with other users!
+
+LOCAL MODE vs ONLINE MODE:
+
+- Local Mode: Your data is saved on this computer only
+- Online Mode: Your data syncs to the cloud server
+  (shared across devices)
+
+TROUBLESHOOTING:
+
+Q: "java is not recognized"
+A: Java not installed or not in PATH
+   - Install Java from: https://www.oracle.com/java/
+   - Restart your computer
+   - Try again
+
+Q: App won't launch
+A: Check Java version: java -version
+   Need Java 11+. Update from:
+   https://www.oracle.com/java/technologies/downloads/
+
+Q: Can't connect to Online Mode
+A: Check internet connection
+   The server may need a moment to wake up
+   Wait 30 seconds and try again
+
+GETTING HELP:
+
+- GitHub: https://github.com/jjjjohnson0628-byte/GeekSocial
+- Cloud Server: https://geeksocial.onrender.com
+- Issues: Check the GitHub Issues page
+
+SHARING YOUR EXPERIENCE:
+
+GeekSocial is in active development!
+- Star the GitHub repo if you like it
+- Report bugs on the Issues page
+- Share feedback and feature requests
+
+=====================================
+That's it! Enjoy GeekSocial!
+=====================================
